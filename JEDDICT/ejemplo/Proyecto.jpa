@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entity-mappings ptype="MONOLITH" ppkg="com.mycompany.ejemplo" epkg="domain" v="6.1.0" rws="_17643694708442" Pws="_17643694708442" cws="_17643694708442" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_17643694708401" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <entity compositePrimaryKeyClass="UsuarioPK" abs="false" class="Usuario" v="true" jbn="false" xre="false" m="false" rootElement="_17643694708401" id="_17643694794453">
+        <ath>Asus</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombres" id="_17643697291476">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="apellidos" id="_17643697533587">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="nombreUsuario" id="_17643697884398">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="clave" id="_17643697954369">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="activo" id="_176436980036410">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="telefonoContacto" id="_176436980570411">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="numeroIdentificacion" id="_176437066175012">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_176437067142313" v="true" xvt="" name="roles" id="_176437257438964">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_17643694794914">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Usuario.findAll">
+            <query>Select e from Usuario e</query>
+        </nq>
+        <nq e="false" name="Usuario.findByNombres">
+            <query>Select u from Usuario u where u.nombres=:nombres</query>
+        </nq>
+        <nq e="false" name="Usuario.findByApellidos">
+            <query>Select u from Usuario u where u.apellidos=:apellidos</query>
+        </nq>
+        <nq e="false" name="Usuario.findByNombreUsuario">
+            <query>Select u from Usuario u where u.nombreUsuario=:nombreUsuario</query>
+        </nq>
+        <nq e="false" name="Usuario.findByClave">
+            <query>Select u from Usuario u where u.clave=:clave</query>
+        </nq>
+        <nq e="false" name="Usuario.findByActivo">
+            <query>Select u from Usuario u where u.activo=:activo</query>
+        </nq>
+        <nq e="false" name="Usuario.findByTelefonoContacto">
+            <query>Select u from Usuario u where u.telefonoContacto=:telefonoContacto</query>
+        </nq>
+        <nq e="false" name="Usuario.findByNumeroIdentificacion">
+            <query>Select u from Usuario u where u.numeroIdentificacion=:numeroIdentificacion</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="RolPK" abs="false" class="Rol" v="true" jbn="false" xre="false" m="false" rootElement="_17643694708401" id="_176437067142313">
+        <ath>Asus</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombreRol" id="_176437067814616">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="descripcion" id="_176437068462517">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_176437067143814">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Rol.findAll">
+            <query>Select e from Rol e</query>
+        </nq>
+        <nq e="false" name="Rol.findByNombreRol">
+            <query>Select r from Rol r where r.nombreRol=:nombreRol</query>
+        </nq>
+        <nq e="false" name="Rol.findByDescripcion">
+            <query>Select r from Rol r where r.descripcion=:descripcion</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="ReservaPK" abs="false" class="Reserva" v="true" jbn="false" xre="false" m="false" rootElement="_17643694708401" id="_176437070238618">
+        <ath>Asus</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="fecha" id="_176437070706321">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="hora" id="_176437071364722">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="asiento" id="_176437071790723">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="estadoReserva" id="_176437174595431">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_17643694794453" v="true" xvt="" name="pasajero" id="_176437666696182">
+                <xwm/>
+                <xm/>
+            </many-to-one>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_176437070238819">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Reserva.findAll">
+            <query>Select e from Reserva e</query>
+        </nq>
+        <nq e="false" name="Reserva.findByFecha">
+            <query>Select r from Reserva r where r.fecha=:fecha</query>
+        </nq>
+        <nq e="false" name="Reserva.findByHora">
+            <query>Select r from Reserva r where r.hora=:hora</query>
+        </nq>
+        <nq e="false" name="Reserva.findByAsiento">
+            <query>Select r from Reserva r where r.asiento=:asiento</query>
+        </nq>
+        <nq e="false" name="Reserva.findByEstadoReserva">
+            <query>Select r from Reserva r where r.estadoReserva=:estadoReserva</query>
+        </nq>
+        <nq e="false" name="Reserva.findByEstadoReserva">
+            <query>Select r from Reserva r where r.estadoReserva=:estadoReserva</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="TurnoPK" abs="false" class="Turno" v="true" jbn="false" xre="false" m="false" rootElement="_17643694708401" id="_176437199394332">
+        <ath>Asus</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="fechaSalida" id="_176437200021635">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="horaSalida" id="_176437200666036">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="cuposDisponibles" id="_176437201296737">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="estadoTurno" id="_176437202269738">
+                <xwm/>
+                <xm/>
+            </basic>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_176437208380346" v="true" xvt="" name="ruta" id="_176437654340380">
+                <xwm/>
+                <xm/>
+            </many-to-one>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_176437070238618" v="true" xvt="" name="reservas" id="_176437618121872">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_176437199394533">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Turno.findAll">
+            <query>Select e from Turno e</query>
+        </nq>
+        <nq e="false" name="Turno.findByFechaSalida">
+            <query>Select t from Turno t where t.fechaSalida=:fechaSalida</query>
+        </nq>
+        <nq e="false" name="Turno.findByHoraSalida">
+            <query>Select t from Turno t where t.horaSalida=:horaSalida</query>
+        </nq>
+        <nq e="false" name="Turno.findByCuposDisponibles">
+            <query>Select t from Turno t where t.cuposDisponibles=:cuposDisponibles</query>
+        </nq>
+        <nq e="false" name="Turno.findByEstadoTurno">
+            <query>Select t from Turno t where t.estadoTurno=:estadoTurno</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="BusPK" abs="false" class="Bus" v="true" jbn="false" xre="false" m="false" rootElement="_17643694708401" id="_176437205139939">
+        <ath>Asus</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="placa" id="_176437205560142">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="modelo" id="_176437206251343">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="capacidad" id="_176437206662244">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="estadoBus" id="_176437207462345">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_176437199394332" v="true" xvt="" name="turnos" id="_176437619197974">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_176437205140040">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Bus.findAll">
+            <query>Select e from Bus e</query>
+        </nq>
+        <nq e="false" name="Bus.findByPlaca">
+            <query>Select b from Bus b where b.placa=:placa</query>
+        </nq>
+        <nq e="false" name="Bus.findByModelo">
+            <query>Select b from Bus b where b.modelo=:modelo</query>
+        </nq>
+        <nq e="false" name="Bus.findByCapacidad">
+            <query>Select b from Bus b where b.capacidad=:capacidad</query>
+        </nq>
+        <nq e="false" name="Bus.findByEstadoBus">
+            <query>Select b from Bus b where b.estadoBus=:estadoBus</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="RutaPK" abs="false" class="Ruta" v="true" jbn="false" xre="false" m="false" rootElement="_17643694708401" id="_176437208380346">
+        <ath>Asus</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="origen" id="_176437209196149">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="destino" id="_176437209643550">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="precio" id="_176437210308051">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="duracionHoras" id="_176437210762752">
+                <xwm/>
+                <xm/>
+            </basic>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_176437208380447">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Ruta.findAll">
+            <query>Select e from Ruta e</query>
+        </nq>
+        <nq e="false" name="Ruta.findByOrigen">
+            <query>Select r from Ruta r where r.origen=:origen</query>
+        </nq>
+        <nq e="false" name="Ruta.findByDestino">
+            <query>Select r from Ruta r where r.destino=:destino</query>
+        </nq>
+        <nq e="false" name="Ruta.findByPrecio">
+            <query>Select r from Ruta r where r.precio=:precio</query>
+        </nq>
+        <nq e="false" name="Ruta.findByDuracionHoras">
+            <query>Select r from Ruta r where r.duracionHoras=:duracionHoras</query>
+        </nq>
+    </entity>
+    <entity compositePrimaryKeyClass="CooperativaPK" abs="false" class="Cooperativa" v="true" jbn="false" xre="false" m="false" rootElement="_17643694708401" id="_176437211662453">
+        <ath>Asus</ath>
+        <attributes>
+            <basic attribute-type="String" v="true" xvt="" name="nombre" id="_176437214200256">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="urlSitio" id="_176437215305657">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="telefonoContacto" id="_176437215777858">
+                <xwm/>
+                <xm/>
+            </basic>
+            <basic attribute-type="String" v="true" xvt="" name="activa" id="_176437219449059">
+                <xwm/>
+                <xm/>
+            </basic>
+            <one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_176437208380346" v="true" xvt="" name="rutasOfrecidas" id="_176437638688178">
+                <xwm/>
+                <xm/>
+            </one-to-many>
+            <one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_17643694794453" v="true" xvt="" name="administradorCooperativa" id="_176437631674976">
+                <xwm/>
+                <xm/>
+            </one-to-one>
+            <id attribute-type="Long" v="true" xvt="" name="id" id="_176437211662454">
+                <xwm/>
+                <xm/>
+                <generated-value strategy="DEFAULT"/>
+            </id>
+        </attributes>
+        <nq e="false" name="Cooperativa.findAll">
+            <query>Select e from Cooperativa e</query>
+        </nq>
+        <nq e="false" name="Cooperativa.findByNombre">
+            <query>Select e from Cooperativa e where e.nombre=:nombre</query>
+        </nq>
+        <nq e="false" name="Cooperativa.findByUrlSitio">
+            <query>Select e from Cooperativa e where e.urlSitio=:urlSitio</query>
+        </nq>
+        <nq e="false" name="Cooperativa.findByTelefonoContacto">
+            <query>Select e from Cooperativa e where e.telefonoContacto=:telefonoContacto</query>
+        </nq>
+        <nq e="false" name="Cooperativa.findByActiva">
+            <query>Select c from Cooperativa c where c.activa=:activa</query>
+        </nq>
+    </entity>
+    <wsl>
+        <ws n="Main" id="_17643694708442">
+            <i ref="_176437067142313" x="579" y="66"/>
+            <i ref="_17643694794453" x="269" y="20"/>
+            <i ref="_176437205139939" x="579" y="439"/>
+            <i ref="_176437199394332" x="323" y="341"/>
+            <i ref="_176437070238618" x="41" y="311"/>
+            <i ref="_176437211662453" x="579" y="216"/>
+            <i ref="_176437208380346" x="195" y="605"/>
+        </ws>
+    </wsl>
+</entity-mappings>
